@@ -1,0 +1,154 @@
+﻿
+### Start config ###
+
+git config credential.helper store
+git config --global credential.helper store
+git config credential.helper 'store --file=/full/path/to/.git_credentials'
+git config credential.helper 'store --file=../store'
+git config --global credential.helper 'store --file=$HOME/store'
+
+git config --global core.autocrlf false
+
+$ git config --global user.name "UserName"
+$ git config --global user.email email@server.ru
+$ git config --global core.editor notepad
+$ ssh-keygen.exe
+$ cat ~/.ssh/id_rsa.pub
+
+$ git config credential.helper store
+$ git config --global credential.helper store
+
+# Copy key and paste to web profile ssh-key
+
+# Notepad++ (Win, x32)
+# git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+# Notepad++ (Win, x64)
+# git config --global core.editor "'c:/program files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+
+### Start config ###
+
+
+
+### Uses ###
+
+echo "# Readme" >> README.md
+git init
+git add README.md
+# git –rm cashed <filename>
+# git mv test_main.c main.c
+git commit -am "My_commit"
+git remote add origin <url>
+git push -u origin main
+
+# Branch
+git branch
+# Select branch, p: dev
+git checkout dev
+git commit -am "Branch commit"
+git push -u origin dev
+git merge dev
+git branch -d dev
+
+### Uses ###
+
+$ git add -A
+$ git log --pretty=format:"%h - %s : %ad [ %an ]" --date=short
+
+
+# Delete Branch
+
+$ git branch -d <имя_ветки>
+$ git push origin --delete <имя_ветки>
+
+# List of url
+
+$ git remote
+origin
+$ git remote add pb https://github.com/paulboone/ticgit
+$ git remote -v
+origin	https://github.com/schacon/ticgit (fetch)
+origin	https://github.com/schacon/ticgit (push)
+pb	https://github.com/paulboone/ticgit (fetch)
+pb	https://github.com/paulboone/ticgit (push)
+
+
+Вы можете использовать следующие флаги --single-branch & --depth, чтобы загрузить определенную ветку и ограничить объем загружаемой истории.
+Вы будете клонировать репо с определенного момента времени и только для данной ветви
+
+$ git clone -b <branch> --single-branch <url> --depth <number of commits>
+
+
+# GPG Sign
+
+$ git config --global user.signingkey <ваш_email>
+$ git config --global commit.gpgsign true
+$ git config --global gpg.program $(which gpg2)
+
+
+
+
+# Tags
+git tag -a v1.4 -m "my version 1.4"
+git push origin --tags
+
+
+
+
+
+
+
+Transfer Folder new-repo.
+
+cd ~/temp/
+git clone /home/mikl/git-ssh/for-linux/
+cd for-linux/
+git remote add dockers https://github.com/maximalisimus/Dockers.git
+git fetch dockers
+git fetch origin
+git checkout -b master origin/master
+git branch -a
+git filter-branch --subdirectory-filter Else_Info/Dockers -- --all
+### Many directory.
+### Add many directory
+# Slow speed add many directory
+# git filter-branch -f --prune-empty --tree-filter "ls -I a -I b | xargs rm -rf"  -- --all
+# Hight speed add many directory
+# git filter-branch -f --prune-empty --index-filter 'git rm --cached -r -q -- . ; git reset -q $GIT_COMMIT -- Cmake GIT Qemu' -- --all
+# Slow speed remove directory
+# git filter-branch --index-filter 'git ls-files -s | sed "s-/trunk/-/-" | GIT_INDEX_FILE=$GIT_INDEX_FILE.new git update-index --index-info && mv "$GIT_INDEX_FILE.new" "$GIT_INDEX_FILE"' 83df928c..HEAD
+### Remove directory
+# Hight Speed remove directory
+# git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch Else_Info/Dockers' --prune-empty --tag-name-filter cat -- --all
+### Remove directory
+### Many directory.
+git rebase 30ee88b51302f3d236d01a7253ac91ea2a1283e5 --onto dockers/main
+git push dockers HEAD:main
+cd ../
+git clone https://github.com/maximalisimus/Dockers.git
+rm -rf for-linux
+
+
+
+
+
+
+
+
+git log --oneline
+git log --pretty=format:"%h - %s : %ad [ %an ]" --date=short
+
+git checkout <first-commit-sha1>
+
+# git reset --soft <first-commit-sha1>
+git reset --hard <first-commit-sha1>
+git commit -m 'All History'
+
+
+
+
+
+
+
+
+
