@@ -94,15 +94,24 @@ $ git config --global gpg.program $(which gpg2)
 git tag -a v1.4 -m "my version 1.4"
 git push origin --tags
 
-git tag -d v1.4-lw
-1) git push <remote> :refs/tags/<tagname>:
-git push origin :refs/tags/v1.4-lw
-2) git push origin --delete <tagname>
-
-git tag
-git show v1.2
-
-git checkout v2.0.0
+git tag -d v1.4-lw
+
+1) git push <remote> :refs/tags/<tagname>:
+
+git push origin :refs/tags/v1.4-lw
+
+2) git push origin --delete <tagname>
+
+
+
+git tag
+git describe --tags
+git show v1.2
+
+
+
+git checkout v2.0.0
+
 git checkout -b version2 v2.0.0
 
 

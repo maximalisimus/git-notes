@@ -100,6 +100,7 @@ git push origin :refs/tags/v1.4-lw
 2) git push origin --delete <tagname>
 
 git tag
+git describe --tags
 git show v1.2
 
 git checkout v2.0.0
